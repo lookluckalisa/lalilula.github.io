@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<title>Интернет-магазин &laquo;SUNDAY&raquo;</title>
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+</head>
+<body>
+<!--логотип-->
+	<div class="logo">
+		<a href="#" alt="Интернет-магазин &laquo;SUNDAY&raquo;"><img src="img/logo1.png" alt="Интернет-магазин &laquo;SUNDAY&raquo;"></a>
+	</div>
+<!--Меню пункты-->
+	<menu class="utility">
+		<li><span class="red">(+33) 88 88 888<span></li>
+		<li><a href="#" alt="Перейти в корзину"><img src="img/basket.png" alt="Перейти в корзину"></a></li>
+		<li><a href="#" alt="LOGIN" id="start">Ваши заказы</a></li>
+		<li id="name_new"></li>
+<!--Всплывающее окно для входа-->
+		<div id="popUp">
+		<form name="RegisrForm" onsubmit="return validate(this)">
+		<img id="close" src="img/close1.png" alt="Закрыть">
+		<div id="inp">
+		<!--<p><input id="Nname" name="mail" type="text" maxlength="20" required placeholder="Ваш email"></p>
+		<p><input name="password" type="password" maxlength="10" required placeholder="Ваш пароль"></p>-->
+		<h2>Войдите или Зарегестрируйтесь</h2>
+		<p><input type="text" name="name" maxlength = "16" required placeholder="Имя"></p>
+		<p><input type="text" name="family" maxlength = "16" required placeholder="Фамилия"></p>
+		<p><input type="text" name="login" maxlength = "10" required placeholder="Логин"></p>
+		<p><input type="password" name="password" maxlength = "10" required placeholder="Пароль"></p>	
+		<p><input type="password" name="password2" maxlength = "10" required placeholder="Повторите пароль"></p>
+		<p><input type="text" name="mail" maxlength = "24" required placeholder="Ваш email"></p>
+		<p><input type="text" name="telephon" maxlength = "24" placeholder="Ваш телефон"></p>
+		<p><input  type="submit" id='submit' value="Зарегистрироваться"></p>
+		<!--<section class="menu_scroll_button"><a href="#" alt="" class="button" type="submit" id='submit'>Подтвердить</a></section>-->
+		</div>
+		</form>
+		</div>
+		<div id="overlay"></div>
+	</menu>
+	<menu class="main">
+		<li><a href="index.html" alt="Главная">Главная<span class="mark"><img src="img/marker.png" alt=""></span></a></li>
+		<li class="catalog"><a href="#" alt="Каталог">Каталог<span class="mark"><img src="img/marker.png" alt=""></span></a></li>
+		<li class="catalog_dop"><a href="#" alt="Мороженое">Мороженое<span class="mark"><img src="img/marker.png" alt=""></span></a></li>
+		<li class="catalog_dop"><a href="#" alt="Торты">Торты<span class="mark"><img src="img/marker.png" alt=""></span></a></li>
+		<li class="catalog_dop"><a href="#" alt="Напитки">Напитки<span class="mark"><img src="img/marker.png" alt=""></span></a></li>
+		<li><a href="#" alt="Доставка">Доставка<span class="mark"><img src="img/marker.png" alt=""></span></a></li>
+		<li><a href="#" alt="Контакты">Контакты<span class="mark"><img src="img/marker.png" alt=""></span></a></li>
+	</menu>
+<!--Блок1 Меню скролл-->
+	<section class="menu_1">
+		<!--<div class="arr_lft">
+		<a href="#" alt=""><img src="img/arrow_left.png" alt=""></a>
+		</div>
+		<div class="arr_rght">
+		<a href="#" alt=""><img src="img/arrow_right.png" alt=""></a>
+		</div>-->
+		<menu class="menu_scroll" id="menu_tr">
+			<li class="product">
+				<section class="menu_scroll_img" onmouseover='changeBg_ice(1)' onmouseout='changeBg_ice(1)'>
+					<a href="#morozhenoe" alt="" id="tr"><img src="img/ice_cream.jpg" alt=""></a>
+				</section>
+				<section class="menu_scroll_button">
+					<a href="#morozhenoe" alt="" class="button" id="icmes">Мороженое</a>
+				</section>
+			</li>
+			<li class="product">
+				<section class="menu_scroll_img" onmouseover='changeBg_cake(1)' onmouseout='changeBg_ice(1)'>
+					<a href="#torty" alt="" id="tr" ><img src="img/cake.jpg" alt=""></a>
+				</section>
+				<section class="menu_scroll_button">
+					<a href="#torty" alt="" class="button" id="cakes">Торты</a>
+				</section>
+			</li>
+			<li class="product">
+				<section class="menu_scroll_img" onmouseover='changeBg_drink(1)' onmouseout='changeBg_ice(1)'>
+				<a href="#napitky" alt="" id="tr"><img src="img/drink.jpg" alt=""></a>
+				</section>
+				<section class="menu_scroll_button">
+					<a href="#napitky" alt="" class="button" id="drinks">Напитки</a>
+				</section>
+			</li>
+		</menu>
+	</section>
+<!--Блок2 Мороженое-->
+	<section class="menu_2">
+		<div class="product_mob">
+				<section class="menu_scroll_mob">
+					<a href="#" alt=""><img src="img/ice_cream.jpg" alt=""></a>
+				</section>
+				<section class="menu_scroll_but">
+					<a href="#" alt="" class="but">Мороженое</a>
+				</section>
+			</div>
+		<section class="menu_scroll_button">
+		<a name="morozhenoe" alt="" class="button">Мороженое</a>
+		</section>
+		
+		<div class="wrapper1">
+		<p class="text"><span class="first_letters">Если вам хочется ощутить бархатную сладость карамели,</span> то побалуйте себя десертом Carte D‘Or Collection Vanille Pecan Caramel с густым карамельным соусом. Вы надолго запомните этот терпкий, пикантный сливочный вкус, который создается благодаря сочетанию натуральных ингредиентов, входящих в состав лакомства от Carte D‘Or.</p>
+		</div>
+		<div class="wrapper2">
+	<form>		
+			<ul class="cone">
+				<!--<li><a alt="" id="slide1_prev" id="jscarousal-vertical-back"><img src="img/arrow_top.png" alt=""></a></li>-->
+				<div id="carouselhAuto">				
+				<!--<div class="click"><input class="cl" type="button" onclick="add(this)" value="+"><br><a href="" alt=""><img src="img/cone_1.jpg" alt="" onmouseover='changeBg_img()'></a><br><input class="cl" type="button" onclick="remove(this)" value="-"><br><input class="cl" type="text" size="5" value="0" /></div>-->
+				<div class="click"><a href="" alt=""><img src="img/cone_2.jpg" alt=""></a><br><input type="button" onclick="remove(this)" value="-"><br><input type="text" size="5" value="0" /></div>
+				<div class="click"><a href="" alt=""><img src="img/cone_3.jpg" alt=""></a><br><input class="cl" type="button" onclick="remove(this)" value="-"><br><input class="cl" type="text" size="5" value="0" /></div>
+				<div class="click"><a href="" alt=""><img src="img/cone_1.jpg" alt=""></a></div>
+				<div class="click"><a href="" alt=""><img src="img/cone_2.jpg" alt=""></a></div>
+				<div class="click"><a href="" alt=""><img src="img/cone_3.jpg" alt=""></a></div>
+				<div class="click"><a href="" alt=""><img src="img/cone_1.jpg" alt=""></a></div>
+				<div class="click"><a href="" alt=""><img src="img/cone_2.jpg" alt=""></a></div>
+				<div class="click"><a href="" alt=""><img src="img/cone_3.jpg" alt="" ></a></div>
+				</div>
+				<!--<li><a  alt="" id="slide1_next" id="jscarousal-vertical-forward"><img src="img/arrow_bottom.png" alt="" ></a></li>-->
+			</ul>
+			<ul class="scoop">
+				<!--<li><a href="#" alt=""><img src="img/arrow_top.png" alt=""></a></li>-->
+				<div id="carouselhAuto_1">
+				<div class="click"><a href="#" alt=""><img src="img/scoop_1.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_2.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_3.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_1.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_2.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_3.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_1.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_2.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/scoop_3.jpg" alt=""></a></div>
+				</div>
+				<!--<li><a href="#" alt=""><img src="img/arrow_bottom.png" alt=""></a></li>-->
+			</ul>
+			<ul class="chip">
+				<!--<li><a href="#" alt=""><img src="img/arrow_top.png" alt=""></a></li>-->
+				<div id="carouselhAuto_2">
+				<div class="click"><a href="#" alt=""><img src="img/chip_1.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_2.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_3.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_4.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_5.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_6.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_1.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_2.jpg" alt=""></a></div>
+				<div class="click"><a href="#" alt=""><img src="img/chip_3.jpg" alt=""></a></div>
+				</div>
+				<!--<li><a href="#" alt=""><img src="img/arrow_bottom.png" alt=""></a></li>-->
+			</ul>
+			</form>
+		</div>
+	</section>
+<!--Блок3 Торты-->
+	<section class="menu_3">
+		<div class="product_mob_2">
+				<section class="menu_scroll_mob">
+					<a href="#" alt=""><img src="img/cake.jpg" alt=""></a>
+				</section>
+				<section class="menu_scroll_but">
+					<a href="#" alt="" class="but">Торты</a>
+				</section>
+			</div>
+		<section class="menu_scroll_button">
+					<a name="torty" alt="" class="button">Торты</a>
+		</section>
+		<div class="wrapper1">
+		<p class="text"><span class="first_letters">Если вам хочется ощутить бархатную сладость карамели,</span> то побалуйте себя десертом Carte D‘Or Collection Vanille Pecan Caramel с густым карамельным соусом. Вы надолго запомните этот терпкий, пикантный сливочный вкус, который создается благодаря сочетанию натуральных ингредиентов, входящих в состав лакомства от Carte D‘Or.</p>
+		</div>
+		<!--<div class="arr_lft">
+		<a href="#" alt=""><img src="img/arrow_left.png" alt=""></a>
+		</div>-->
+		<menu class="menu_scroll">
+			<div id="carouselhAuto_3">
+					<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_4.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+			<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_5.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+			<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_6.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+			<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_7.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+			<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_8.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+			<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_9.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+				<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_1.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+			<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_2.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+			<div class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/cake_3.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Gelateria Toscana</h2></a>
+					<p class="text"><span class="thumbnail-text">Вас ждет освежающая смесь с приятным апельсиновым вкусом!</span></p>
+				</section>
+			</div>
+		</div>
+		</menu>
+		<!--<div class="arr_rght">
+		<a href="#" alt=""><img src="img/arrow_right.png" alt=""></a>
+		</div>-->
+	</section>
+<!--Блок4 Напитки-->
+	<section class="menu_4">
+		<div class="product_mob_3">
+				<section class="menu_scroll_mob">
+					<a href="#" alt=""><img src="img/drink.jpg" alt=""></a>
+				</section>
+				<section class="menu_scroll_but">
+					<a href="#" alt="" class="but">Напитки</a>
+				</section>
+		</div>
+		<section class="menu_scroll_button">
+			<a name="napitky" alt="" class="button">Напитки</a>
+		</section>
+			<div class="wrapper_drink">
+				<a href="#" alt="" class="img_drink" id="img_drink"></a>
+					<menu class="list_of_drinks">				
+						<li onmouseover='changeBg_1()' onmouseout='changeBg_0()'><a href="#" alt="Апельсиновый сок">Апельсиновый сок</a></li>
+						<li onmouseover='changeBg_2()' onmouseout='changeBg_0()'><a href="#" alt="Виноградный сок">Виноградный сок</a></li>
+						<li onmouseover='changeBg_3()' onmouseout='changeBg_0()'><a href="#" alt="Виноградный сок">Мультифруктовый сок</a></li>
+						<li onmouseover='changeBg_4()' onmouseout='changeBg_0()'><a href="#" alt="Сoca-Cola">Сoca-Cola</a></li>
+						<li onmouseover='changeBg_5()' onmouseout='changeBg_0()'><a href="#" alt="Sprite">Sprite</a></li>
+						<li onmouseover='changeBg_6()' onmouseout='changeBg_0()'><a href="#" alt="Fanta">Fanta</a></li>
+						<li onmouseover='changeBg_8()' onmouseout='changeBg_0()'><a href="#" alt="Минеральная вода">Минеральная вода</a></li>
+						<li onmouseover='changeBg_7()' onmouseout='changeBg_0()'><a href="#" alt="Лимонад">Лимонад</a></li>
+						<li onmouseover='changeBg_9()' onmouseout='changeBg_0()'><a href="#" alt="Молочный коктейль">Молочный коктейль</a></li>
+						<li><a href="#" alt="" ></a></li>
+						<!--<li><a href="#" alt="" class="arrow"></a></li>-->
+					</menu>
+			</div>
+	</section>
+<!--Блок5 Доставка-->
+	<section class="menu_5">
+	<section class="menu_scroll_button">
+					<a href="#" alt="" class="button">Доставка</a>
+		</section>
+		<menu class="menu_scroll">
+			<li class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/computer.jpg" alt=""></a>
+				</section>
+			<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Оформите заказ</h2></a>
+					<p class="text">Соберите нужные Вам товары в корзину</p>
+				</section>
+			<li class="product">
+				<section class="menu_scroll_img">
+					<a href="#" alt=""><img src="img/opertor.jpg" alt=""></a>
+				</section>
+			<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Вам перезвонят</h2></a>
+					<p class="text">Наш оператор сразу же перезвонит Вам</p>
+				</section>
+			</li>
+			<li class="product">
+				<section class="menu_scroll_img">
+				<a href="#" alt=""><img src="img/car.jpg" alt=""></a>
+				</section>
+				<section class="describe">
+					<a href="#" alt=""><h2 class="first_letters">Быстро доставят</h2></a>
+					<p class="text">Мы оперативно доставим Ваш заказ</p>
+				</section>
+			</li>
+		</menu>
+	</section>
+<!--Блок6 Регистрация-->
+	<menu class="form">
+	<form name="NewForm" onsubmit="return validateNew(this)">
+		<li class="red">Регистрация<img src="img/marker.png" alt="" class="marker"></li>
+		<li class="form_mobile"><input id="Nname" name="Newmail" type="text" maxlength="20" required placeholder="Ваш email"></li>
+		<li class="form_mobile"><input  type="submit" id='submit' value="Подтвердить"></li>
+	</form>
+	</menu>
+<!--Блок7 Футер-->
+	<div class="footer_menu">
+			<ul class="menu_1">
+				<li><a href="#" alt="" class="red">О компании</a></li>
+				<li><a href="#" alt="" class="first_letters">Блог</a></li>
+				<li><a href="#" alt="" class="first_letters">Магазины</a></li>
+				<li><a href="#" alt="" class="first_letters">Работа</a></li>
+			</ul>
+			<ul class="menu_2">
+				<li><a href="#" alt="" class="red">Мой аккаунт</a></li>
+				<li><a href="#" alt="" class="first_letters">Заказы</a></li>
+				<li><a href="#" alt="" class="first_letters">Подарки</a></li>
+				<li><a href="#" alt="" class="first_letters">Акции</a></li>
+				
+			</ul>
+			<ul class="menu_3">
+				<li><a href="#" alt="" class="red">Поддержка</a></li>
+				<li><a href="#" alt="" class="first_letters">Связаться</a></li>
+				<li><a href="#" alt="" class="first_letters">FAQ</a></li>
+				<li><a href="#" alt="" class="first_letters">Доставка</a></li>
+		
+			</ul>
+	</div>
+<!--Блок7.1 Иконки соцсети-->
+	<footer>
+		<menu class="footer">
+			<li class="red">Мы в сети<img src="img/marker.png" alt="" class="marker"></li>
+			<li><a href="#" alt="" class="icon1"></a></li>
+			<li><a href="#" alt="" class="icon2"></a></li>
+			<li><a href="#" alt="" class="icon3"></a></li>
+		</menu>
+		<div class="copyright">Copyright © 2016 by: OlgaProkopova</div>
+	</footer>
+<script src="js/jsCarousel-2.0.0.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
+
+
+
+
+
